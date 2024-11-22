@@ -1,0 +1,17 @@
+{
+  "name": "bankxyz",
+  "version": "1.0.0",
+  "description": "cypres advance",
+  "main": "index.js",
+  "author": "creed",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^13.15.0",
+    "prettier": "^3.3.3"
+  },
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run" : "cypress run"
+  }
+
+}
