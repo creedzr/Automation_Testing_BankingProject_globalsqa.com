@@ -2,31 +2,31 @@
 import  BankingPage from "../support/pages/BankingPage";
 
 describe('Menambah Rekening', () => {
-    const acc = new  BankingPage();
+    const Banking = new  BankingPage();
 
     beforeEach(() => {
-        acc.visit();
-        acc.navigateToManagerLogin();
+        Banking.visit();
+        Banking.navigateToManagerLogin();
     });
 
 
     it('Membuka akun Rekening Dollaar', () => {
         //membahcustomer
         cy.log('Menambah Customer')
-        acc.clickAddCustomer();
-        acc.fillCustomerDetails('agum','ruswandi','E12456');
-        acc.submitCustomerForm();
+        Banking.clickAddCustomer();
+        Banking.fillCustomerDetails('agum','ruswandi','E12456');
+        Banking.submitCustomerForm();
         
         //membuka rekening dollar
-        acc.navigateToOpenaccount();
+        Banking.navigateToOpenaccount();
         cy.log('Menambah Rekening Dollar');
-        acc.selectCustomer('agum ruswandi', 'Dollar');
-        acc.clickProcess();
+        Banking.selectCustomer('agum ruswandi', 'Dollar');
+        Banking.clickProcess();
        
        //Validasi rekening sudah terdaftar
-       acc.navigateToCustomer();
+       Banking.navigateToCustomer();
        cy.log('Mengecek Rekening Dollar yg sudah terdaftar');
-       acc.searchCustomer('agum');
+       Banking.searchCustomer('agum');
        cy.get('table').contains('td', 'agum').should('exist');
        
     });
@@ -35,27 +35,27 @@ describe('Menambah Rekening', () => {
     it('Membuka akun rekening Pondsterling', () => {
          //membahcustomer
          cy.log('Menambah Customer')
-         acc.clickAddCustomer();
-         acc.fillCustomerDetails('agum','ruswandi','E12456');
-         acc.submitCustomerForm();
+         Banking.clickAddCustomer();
+         Banking.fillCustomerDetails('agum','ruswandi','E12456');
+         Banking.submitCustomerForm();
         
 
         //membuka rekening dollar
-        acc.navigateToOpenaccount();
+        Banking.navigateToOpenaccount();
         cy.log('Menambah Rekening Dollar');
-        acc.selectCustomer('agum ruswandi', 'Dollar');
-        acc.clickProcess();
+        Banking.selectCustomer('agum ruswandi', 'Dollar');
+        Banking.clickProcess();
        
 
         //membuka rekening Pondsterling
         cy.log('Menambah Rekening Pound');
-        acc.selectCustomer('agum ruswandi', 'Pound');
-        acc.clickProcess();
+        Banking.selectCustomer('agum ruswandi', 'Pound');
+        Banking.clickProcess();
         
         //Validasi rekening sudah terdaftar
-        acc.navigateToCustomer();
+        Banking.navigateToCustomer();
         cy.log('Mengecek Rekening Dollar & Pound yg sudah terdaftar');
-        acc.searchCustomer('agum');
+        Banking.searchCustomer('agum');
         cy.get('table').contains('td', 'agum').should('exist');
 
     });
@@ -63,31 +63,31 @@ describe('Menambah Rekening', () => {
     it('Menambah Rekening Ruppe', () => {
          //membahcustomer
          cy.log('Menambah Customer');
-         acc.clickAddCustomer();
-         acc.fillCustomerDetails('agum','ruswandi','E12456');
-         acc.submitCustomerForm();
+         Banking.clickAddCustomer();
+         Banking.fillCustomerDetails('agum','ruswandi','E12456');
+         Banking.submitCustomerForm();
          
         //membuka rekening dollar
-        acc.navigateToOpenaccount();
+        Banking.navigateToOpenaccount();
         cy.log('Menambah Rekening Dollar');
-        acc.selectCustomer('agum ruswandi', 'Dollar');
-        acc.clickProcess();
+        Banking.selectCustomer('agum ruswandi', 'Dollar');
+        Banking.clickProcess();
 
         //membuka rekening Pondsterling
         cy.log('Menambah Rekening Pound');
-        acc.selectCustomer('agum ruswandi', 'Pound');
+        Banking.selectCustomer('agum ruswandi', 'Pound');
         cy.log('Menambah Rekening Pound');
-        acc.clickProcess();
+        Banking.clickProcess();
         
          //menambah rekening Rupee
         cy.log('Menambah Rekening Rupee');
-        acc.selectCustomer('agum ruswandi', 'Rupee');
-        acc.clickProcess();
+        Banking.selectCustomer('agum ruswandi', 'Rupee');
+        Banking.clickProcess();
         
          //validasi 
-        acc.navigateToCustomer();
+        Banking.navigateToCustomer();
         cy.log('Mengecek Rekening Dollar,Pound & Rupee yg sudah terdaftar');
-        acc.searchCustomer('agum');
+        Banking.searchCustomer('agum');
         cy.get('table').contains('td', 'agum').should('exist');
 
 
@@ -96,147 +96,147 @@ describe('Menambah Rekening', () => {
 
     it('Validasi pengujian  menambah akun dollar kedua ', () => {
         //menambah akun dollar ganda 
-        acc.navigateToOpenaccount();
+        Banking.navigateToOpenaccount();
         cy.log('Menambah akun Dollar kedua');
-        acc.selectCustomer('Hermoine Granger', 'Dollar')
-        acc.clickProcess();
-        acc.verifyAlertText('Account created successfully');
+        Banking.selectCustomer('Hermoine Granger', 'Dollar')
+        Banking.clickProcess();
+        Banking.verifyAlertText('Bankingount created successfully');
 
         //validasi rekening dollar tertambahkan
         cy.log('mengecek akun dollar tertambahkan')
-        acc.navigateToCustomer();
-        acc.searchCustomer('Hermoine');
+        Banking.navigateToCustomer();
+        Banking.searchCustomer('Hermoine');
         cy.get('table').contains('td', 'Hermoine').should('exist');
         
     });
 
     it('Validasi pengujian  menambah akun dollar ketiga ', () => {
         //menambah akun dollar ganda 
-        acc.navigateToOpenaccount();
+        Banking.navigateToOpenaccount();
         cy.log('Menambah akun Dollar kedua');
-        acc.selectCustomer('Hermoine Granger', 'Dollar')
-        acc.clickProcess();
-        acc.verifyAlertText('Account created successfully');
+        Banking.selectCustomer('Hermoine Granger', 'Dollar')
+        Banking.clickProcess();
+        Banking.verifyAlertText('Bankingount created successfully');
 
 
         //validasi rekening dollar tertambahkan
         cy.log('mengecek akun dollar tertambahkan')
-        acc.navigateToCustomer();
-        acc.searchCustomer('Hermoine');
+        Banking.navigateToCustomer();
+        Banking.searchCustomer('Hermoine');
         cy.get('table').contains('td', 'Hermoine').should('exist');
         
 
         //menambah akun dollar ketiga
-        acc.navigateToOpenaccount();
+        Banking.navigateToOpenaccount();
         cy.log('Menambah akun Dollar ketiga');
-        acc.selectCustomer('Hermoine Granger', 'Dollar')
-        acc.clickProcess();
-        acc.verifyAlertText('Account created successfully');
+        Banking.selectCustomer('Hermoine Granger', 'Dollar')
+        Banking.clickProcess();
+        Banking.verifyAlertText('Bankingount created successfully');
 
          //validasi rekening dollar tertambahkan
         cy.log('mengecek akun dollar tertambahkan')
-        acc.navigateToCustomer();
-        acc.searchCustomer('Hermoine');
+        Banking.navigateToCustomer();
+        Banking.searchCustomer('Hermoine');
         cy.get('table').contains('td', 'Hermoine').should('exist');
         
     });
 
     it('Validasi pengujian menambah akun Pond ke dua', () => {
         //menambah akun pound ganda 
-        acc.navigateToOpenaccount();
+        Banking.navigateToOpenaccount();
         cy.log('Menambah akun Pound kedua');
-        acc.selectCustomer('Ron Weasly', 'Pound')
-        acc.clickProcess();
-        acc.verifyAlertText('Account created successfully');
+        Banking.selectCustomer('Ron Weasly', 'Pound')
+        Banking.clickProcess();
+        Banking.verifyAlertText('Bankingount created successfully');
 
         //validasi rekening pound tertambahkan
         cy.log('mengecek akun Pound tertambahkan')
-        acc.navigateToCustomer();
-        acc.searchCustomer('Ron');
+        Banking.navigateToCustomer();
+        Banking.searchCustomer('Ron');
         cy.get('table').contains('td', 'Ron').should('exist');
         
     });
 
     it('Validasi pengujian menambah akun Pound ketiga', () => {
         //menambah akun Pound ganda 
-        acc.navigateToOpenaccount();
+        Banking.navigateToOpenaccount();
         cy.log('Menambah akun Pound kedua');
-        acc.selectCustomer('Ron Weasly', 'Pound')
-        acc.clickProcess();
-        acc.verifyAlertText('Account created successfully');
+        Banking.selectCustomer('Ron Weasly', 'Pound')
+        Banking.clickProcess();
+        Banking.verifyAlertText('Bankingount created successfully');
 
 
         //validasi rekening Pound tertambahkan
         cy.log('mengecek akun dollar tertambahkan')
-        acc.navigateToCustomer();
-        acc.searchCustomer('Ron');
+        Banking.navigateToCustomer();
+        Banking.searchCustomer('Ron');
         cy.get('table').contains('td', 'Ron').should('exist');
         
 
         //menambah akun Pound ketiga
-        acc.navigateToOpenaccount();
+        Banking.navigateToOpenaccount();
         cy.log('Menambah akun Pound ketiga');
-        acc.selectCustomer('Ron Weasly', 'Dollar')
-        acc.clickProcess();
-        acc.verifyAlertText('Account created successfully');
+        Banking.selectCustomer('Ron Weasly', 'Dollar')
+        Banking.clickProcess();
+        Banking.verifyAlertText('Bankingount created successfully');
 
          //validasi rekening Pound tertambahkan
         cy.log('mengecek akun Pound tertambahkan')
-        acc.navigateToCustomer();
-        acc.searchCustomer('Ron');
+        Banking.navigateToCustomer();
+        Banking.searchCustomer('Ron');
         cy.get('table').contains('td', 'Ron').should('exist');
         
     });
 
     it('Validasi pengujian menambakan akun Rupee kedua ', () => {
         //menambah akun Rupee ganda 
-        acc.navigateToOpenaccount();
+        Banking.navigateToOpenaccount();
         cy.log('Menambah akun Rupee kedua');
-        acc.selectCustomer('Harry Potter', 'Rupee')
-        acc.clickProcess();
-        acc.verifyAlertText('Account created successfully');
+        Banking.selectCustomer('Harry Potter', 'Rupee')
+        Banking.clickProcess();
+        Banking.verifyAlertText('Bankingount created successfully');
 
         //validasi rekening Rupee tertambahkan
         cy.log('mengecek akun Rupee tertambahkan')
-        acc.navigateToCustomer();
-        acc.searchCustomer('Harry');
+        Banking.navigateToCustomer();
+        Banking.searchCustomer('Harry');
         cy.get('table').contains('td', 'Harry').should('exist');
     });
 
     it('Validasi pengujian Menambakan akun Rupee ketiga', () => {
          //menambah akun Rupee ganda 
-         acc.navigateToOpenaccount();
+         Banking.navigateToOpenaccount();
          cy.log('Menambah akun Rupee kedua');
-         acc.selectCustomer('Harry Potter', 'Rupee')
-         acc.clickProcess();
-         acc.verifyAlertText('Account created successfully');
+         Banking.selectCustomer('Harry Potter', 'Rupee')
+         Banking.clickProcess();
+         Banking.verifyAlertText('Bankingount created successfully');
  
  
         //validasi rekening Rupee tertambahkan
          cy.log('mengecek akun Rupee tertambahkan')
-         acc.navigateToCustomer();
-         acc.searchCustomer('Harry');
+         Banking.navigateToCustomer();
+         Banking.searchCustomer('Harry');
          cy.get('table').contains('td', 'Harry').should('exist');
          
  
          //menambah akun Rupee ketiga
-         acc.navigateToOpenaccount();
+         Banking.navigateToOpenaccount();
          cy.log('Menambah akun Ruppe ketiga');
-         acc.selectCustomer('Harry Potter', 'Rupee')
-         acc.clickProcess();
-         acc.verifyAlertText('Account created successfully');
+         Banking.selectCustomer('Harry Potter', 'Rupee')
+         Banking.clickProcess();
+         Banking.verifyAlertText('Bankingount created successfully');
  
           //validasi rekening Rupee tertambahkan
          cy.log('mengecek akun Rupee tertambahkan')
-         acc.navigateToCustomer();
-         acc.searchCustomer('Harry');
+         Banking.navigateToCustomer();
+         Banking.searchCustomer('Harry');
          cy.get('table').contains('td', 'Harry').should('exist');
          
     });
 
-    it('Validasi pengujian tombol Home di OpenAccount', () => {
-        acc.navigateToOpenaccount();
-        acc.navigateTohome();
+    it('Validasi pengujian tombol Home di OpenBankingount', () => {
+        Banking.navigateToOpenaccount();
+        Banking.navigateTohome();
 
         //assertion
         cy.get('button[ng-click="home()"]').should('exist');
