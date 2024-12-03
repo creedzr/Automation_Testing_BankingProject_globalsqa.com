@@ -234,7 +234,7 @@ describe('Menambah Rekening', () => {
          
     });
 
-    it('Validasi pengujian tombol Home di OpenBankingount', () => {
+    it('Validasi pengujian tombol Home di Open account', () => {
         Banking.navigateToOpenaccount();
         Banking.navigateTohome();
 
