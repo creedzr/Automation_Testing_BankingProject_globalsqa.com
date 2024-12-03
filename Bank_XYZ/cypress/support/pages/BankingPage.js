@@ -21,7 +21,7 @@ class BankingPage {
 
     // Fungsi untuk menavigasi ke halaman Home
     navigateTohome() {
-        cy.get('button[ng-click="home()"').click();
+        cy.get('button[ng-click="home()"]').click();
     }
 
     // Fungsi untuk mengklik tombol Add Customer
@@ -80,6 +80,24 @@ class BankingPage {
     // Fungsi untuk mencari customer berdasarkan teks
     searchCustomer(text) {
         cy.get('input[placeholder="Search Customer"]').type(text);
+    }
+
+    // Fungi Untuk Sort
+    sortFname() {
+        cy.get('a[ng-click="sortType = \'fName\'; sortReverse = !sortReverse"]').click();
+    }
+
+    sortLname() {
+        cy.get('a[ng-click="sortType = \'lName\'; sortReverse = !sortReverse"]').click();
+    }
+
+    sortPostcd() {
+        cy.get('a[ng-click="sortType = \'postCd\'; sortReverse = !sortReverse"]').click();
+    }
+
+    //Fungsi tombol delete di customer
+    deleteCustomer(){
+        cy.get('button[ng-click="deleteCust(cust)"]').click();
     }
 }
 
