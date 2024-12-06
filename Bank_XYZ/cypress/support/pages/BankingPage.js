@@ -6,37 +6,37 @@ class BankingPage {
 
     // Fungsi untuk menavigasi ke halaman login Manager
     navigateToManagerLogin() {
-        cy.get('button[ng-click="manager()"]').click();
+        cy.get('button[ng-click="manager()"]').should('be.visible').click();
     }
 
     // Fungsi untuk menavigasi ke halaman Open Account
     navigateToOpenaccount() {
-        cy.get('button[ng-click="openAccount()"]').click();
+        cy.get('button[ng-click="openAccount()"]').should('be.visible').click();
     }
 
     // Fungsi untuk menavigasi ke halaman Customer
     navigateToCustomer() {
-        cy.get('button[ng-click="showCust()"]').click();
+        cy.get('button[ng-click="showCust()"]').should('be.visible').click();
     }
 
     // Fungsi untuk menavigasi ke halaman Home
     navigateTohome() {
-        cy.get('button[ng-click="home()"]').click();
+        cy.get('button[ng-click="home()"]').should('be.visible').click();
     }
 
     // Fungsi untuk mengklik tombol Add Customer
     clickAddCustomer() {
-        cy.get('button[ng-click="addCust()"]').click();
+        cy.get('button[ng-click="addCust()"]').should('be.visible').click();
     }
 
     // Fungsi untuk mengirimkan formulir customer
     submitCustomerForm() {
-        cy.get('.btn.btn-default').click({ timeout: 1000 });
+        cy.get('.btn.btn-default').should('be.visible').click({ timeout: 1000 });
     }
 
     // Fungsi untuk mengklik tombol Process pada halaman Open Account
     clickProcess() {
-        cy.get('button[type="submit"]').click();
+        cy.get('button[type="submit"]').should('be.visible').click();
     }
 
     // Fungsi untuk memverifikasi teks alert
@@ -97,7 +97,22 @@ class BankingPage {
 
     //Fungsi tombol delete di customer
     deleteCustomer(){
-        cy.get('button[ng-click="deleteCust(cust)"]').click();
+        cy.get('button[ng-click="deleteCust(cust)"]').should('be.visible').click();
+    }
+
+    //fungsi tombol untuk customer login
+    navigateToCustomerlogin(){
+        cy.get('button[ng-click="customer()"').click();
+    }
+
+    //fungsi ini untuk memilih user login
+    selectuser(name){
+        cy.get('#userSelect').select(name);
+    }
+
+    //fungsi untuk tombol login
+    loginusername(){
+        cy.get('.btn.btn-default').should('be.visible').click();
     }
 }
 
