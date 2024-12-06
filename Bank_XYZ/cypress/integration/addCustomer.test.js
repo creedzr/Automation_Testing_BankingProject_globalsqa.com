@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import BankingPage from "../support/pages/BankingPage";
 
-describe('Menambah Customer ', () => {
+describe('Uji Coba Menambah Customer ', () => {
     const Banking = new BankingPage();
 
     beforeEach(() => {
@@ -137,9 +137,9 @@ describe('Menambah Customer ', () => {
         Banking.navigateTohome();
 
         //assertion
-        cy.get('button[ng-click="home()"]').should('exist');
-        cy.get('button[ng-click="customer()"]').should('exist');
-        cy.get('button[ng-click="manager()"]').should('exist');
+        cy.get('button[ng-click="home()"]').should('be.visible');
+        cy.get('button[ng-click="customer()"]').should('be.visible');
+        cy.get('button[ng-click="manager()"]').should('be.visible');
     });
     });
 
