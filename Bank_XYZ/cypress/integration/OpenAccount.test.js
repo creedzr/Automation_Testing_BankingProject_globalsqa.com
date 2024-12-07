@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import  BankingPage from "../support/pages/BankingPage";
 
-describe('Uji Coba Menambah Rekening', () => {
+describe('Validasi Fitur Menambah Rekening', () => {
     const Banking = new  BankingPage();
 
     beforeEach(() => {
@@ -10,7 +10,7 @@ describe('Uji Coba Menambah Rekening', () => {
     });
 
 
-    it('Membuka akun Rekening Dollaar', () => {
+    it('Harus berhasil membuka akun dengan mata uang Dollar untuk customer baru', () => {
         //membahcustomer
         cy.log('Menambah Customer')
         Banking.clickAddCustomer();
@@ -32,7 +32,7 @@ describe('Uji Coba Menambah Rekening', () => {
     });
     
 
-    it('Membuka akun rekening Pondsterling', () => {
+    it('Harus berhasil membuka akun dengan mata uang Pound', () => {
          //membahcustomer
          cy.log('Menambah Customer')
          Banking.clickAddCustomer();
@@ -60,7 +60,7 @@ describe('Uji Coba Menambah Rekening', () => {
 
     });
 
-    it('Menambah Rekening Ruppe', () => {
+    it('Harus berhasil membuka akun dengan mata uang Rupee', () => {
          //membahcustomer
          cy.log('Menambah Customer');
          Banking.clickAddCustomer();
@@ -94,7 +94,7 @@ describe('Uji Coba Menambah Rekening', () => {
     });
 
 
-    it('Validasi pengujian  menambah akun dollar kedua ', () => {
+    it('Harus berhasil menambah akun Dollar kedua untuk customer yang sama', () => {
         //menambah akun dollar ganda 
         Banking.navigateToOpenaccount();
         cy.log('Menambah akun Dollar kedua');
@@ -110,7 +110,7 @@ describe('Uji Coba Menambah Rekening', () => {
         
     });
 
-    it('Validasi pengujian  menambah akun dollar ketiga ', () => {
+    it('Harus berhasil menambah akun Dollar ketiga untuk customer yang sama ', () => {
         //menambah akun dollar ganda 
         Banking.navigateToOpenaccount();
         cy.log('Menambah akun Dollar kedua');
@@ -141,7 +141,7 @@ describe('Uji Coba Menambah Rekening', () => {
         
     });
 
-    it('Validasi pengujian menambah akun Pond ke dua', () => {
+    it('Harus berhasil menambah akun Pound kedua untuk customer yang sama', () => {
         //menambah akun pound ganda 
         Banking.navigateToOpenaccount();
         cy.log('Menambah akun Pound kedua');
@@ -157,7 +157,7 @@ describe('Uji Coba Menambah Rekening', () => {
         
     });
 
-    it('Validasi pengujian menambah akun Pound ketiga', () => {
+    it('Harus berhasil menambah akun Pound ketiga untuk customer yang sama', () => {
         //menambah akun Pound ganda 
         Banking.navigateToOpenaccount();
         cy.log('Menambah akun Pound kedua');
@@ -188,7 +188,7 @@ describe('Uji Coba Menambah Rekening', () => {
         
     });
 
-    it('Validasi pengujian menambakan akun Rupee kedua ', () => {
+    it('Harus berhasil menambah akun Rupee kedua untuk customer yang sama ', () => {
         //menambah akun Rupee ganda 
         Banking.navigateToOpenaccount();
         cy.log('Menambah akun Rupee kedua');
@@ -203,7 +203,7 @@ describe('Uji Coba Menambah Rekening', () => {
         cy.get('table').contains('td', 'Harry').should('exist');
     });
 
-    it('Validasi pengujian Menambakan akun Rupee ketiga', () => {
+    it('Harus berhasil menambah akun Rupee ketiga untuk customer yang sama', () => {
          //menambah akun Rupee ganda 
          Banking.navigateToOpenaccount();
          cy.log('Menambah akun Rupee kedua');
@@ -234,7 +234,7 @@ describe('Uji Coba Menambah Rekening', () => {
          
     });
 
-    it('Validasi pengujian tombol Home di Open account', () => {
+    it('Harus menavigasi ke halaman Home dari halaman Open Account', () => {
         Banking.navigateToOpenaccount();
         Banking.navigateTohome();
 

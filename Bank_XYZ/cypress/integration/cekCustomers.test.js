@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 import  BankingPage from "../support/pages/BankingPage";
 
-describe('Validasi Customers', () => {
+describe('Validasi fitur Customers', () => {
     const Banking = new BankingPage;
     beforeEach(() => {
         Banking.visit();
@@ -9,7 +9,7 @@ describe('Validasi Customers', () => {
     });
 
 
-    it('Validasi pengujian fungsi search', () => {
+    it('Harus berhasil mencari customer dengan fungsi search', () => {
         Banking.navigateToCustomer();
         Banking.searchCustomer('Harry');
         cy.get('table').contains('Harry').should('exist');
@@ -17,7 +17,7 @@ describe('Validasi Customers', () => {
 
     });
 
-    it('Validasi Sort kolom FirstName', () => {
+    it('Harus berhasil melakukan sort kolom First Name', () => {
        //menambah customers
         cy.log('Menambah Customer')
         Banking.clickAddCustomer();
@@ -38,7 +38,7 @@ describe('Validasi Customers', () => {
     });
     
 
-    it('Validasi Sort kolom LastName', () => {
+    it('Harus berhasil melakukan sort kolom Last Name', () => {
         //menambah customers
         cy.log('Menambah Customer');
         Banking.clickAddCustomer();
@@ -58,7 +58,7 @@ describe('Validasi Customers', () => {
          cy.get('table').contains('td', 'ruswandi').should('exist');
     });
 
-    it('Validasi Sort kolom Postcode', () => {
+    it('Harus berhasil melakukan sort kolom Postcode', () => {
         //menambah customers
         cy.log('Menambah Customer');
         Banking.clickAddCustomer();
@@ -79,7 +79,7 @@ describe('Validasi Customers', () => {
 
     });
 
-    it('validasi fungsi delete customer', () => {
+    it('Harus berhasil menghapus customer', () => {
         //menambah customers
         cy.log('Menambah Customer');
         Banking.clickAddCustomer();
@@ -104,7 +104,7 @@ describe('Validasi Customers', () => {
         cy.get('table').contains('agum').should('not.exist');
     });
 
-    it('Validasi pengujian tombol Home di Customers', () => {
+    it('Harus berhasil memvalidasi tombol navigasi Home di halaman Customers', () => {
         Banking.navigateToOpenaccount();
         Banking.navigateTohome();
 
