@@ -114,6 +114,21 @@ class BankingPage {
     loginusername(){
         cy.get('.btn.btn-default').should('be.visible').click();
     }
+
+    //fungsi untuk tombol deposit
+    deposit(){
+        cy.get('button[ng-click="deposit()"]').should('be.visible').click();
+    
+    }
+
+    //fungsi mengisi jumlah yg mau di deposit
+    enteramount(amount){
+        cy.get('input[ng-model="amount"]').clear().type(amount);
+    }
+
+    submitdeposit(){
+        cy.get('.btn.btn-default').should('be.visible').click();
+    }
 }
 
 export default BankingPage;
