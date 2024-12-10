@@ -129,6 +129,22 @@ class BankingPage {
     submitdeposit(){
         cy.get('.btn.btn-default').should('be.visible').click();
     }
+
+    selectaccount(id){
+        cy.get('#accountSelect').select(id);
+    }
+
+    withdrawl(){
+        cy.get('button[ng-click="withdrawl()"]').should('be.visible').click();
+    }
+
+    enterwithdrawl(withdrawl){
+        cy.get('input[ng-model="amount"]').clear().type(withdrawl);
+    }
+
+    submitwithdrawl(){
+        cy.get('.btn.btn-default').should('be.visible').click();
+    }
 }
 
 export default BankingPage;
