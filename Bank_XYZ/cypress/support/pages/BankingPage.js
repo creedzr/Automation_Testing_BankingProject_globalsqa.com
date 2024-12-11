@@ -115,7 +115,7 @@ class BankingPage {
         cy.get('.btn.btn-default').should('be.visible').click();
     }
 
-    //fungsi untuk tombol deposit
+    //fungsi untuk tombol untuk memilih deposit
     deposit(){
         cy.get('button[ng-click="deposit()"]').should('be.visible').click();
     
@@ -126,24 +126,34 @@ class BankingPage {
         cy.get('input[ng-model="amount"]').clear().type(amount);
     }
 
+    //fungsi untuk submit deposit
     submitdeposit(){
         cy.get('.btn.btn-default').should('be.visible').click();
     }
 
+    //fungsi untuk memilih akun user
     selectaccount(id){
         cy.get('#accountSelect').select(id);
     }
 
+    //fungsi tombol untuk memilih withdrawl
     withdrawl(){
         cy.get('button[ng-click="withdrawl()"]').should('be.visible').click();
     }
-
+    
+    //fungsi untuk mengisi jumlah/nilai withdrawl
     enterwithdrawl(withdrawl){
         cy.get('input[ng-model="amount"]').clear().type(withdrawl);
     }
 
+    //fungsi tombol untuk submit withdrawl
     submitwithdrawl(){
         cy.get('.btn.btn-default').should('be.visible').click();
+    }
+
+    //fungsi tombol untuk logout user
+    Logout(){
+        cy.get('button[ng-click="byebye()"]').should('be.visible').click();
     }
 }
 

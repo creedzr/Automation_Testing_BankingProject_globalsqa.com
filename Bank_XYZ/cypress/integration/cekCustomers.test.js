@@ -114,5 +114,7 @@ describe('Validasi fitur Customers', () => {
         cy.get('button[ng-click="manager()"]').should('be.visible');
     });
 
+    
+
 });
 
