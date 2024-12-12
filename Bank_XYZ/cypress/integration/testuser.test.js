@@ -185,6 +185,37 @@ describe('Validasi Fitur User di rekening Dollar ', () => {
     });
 
 
+    it('Withdrawal harus ditolak ketika jumlah melebihi saldo di rekening Dollar', () => {
+        cy.log('Memilih user')
+        Banking.selectuser('Harry Potter');
+        Banking.loginusername();
+       
+        //melakukan deposit rekening dollar
+        cy.log('memilih rekening');
+        Banking.selectaccount('1004');
+        //assertion
+        cy.contains('Harry Potter').should('be.visible');
+        cy.contains('Account Number : 1004').should('be.visible');
+        cy.contains('Currency : Dollar').should('be.visible');
+        
+        Banking.deposit();
+        cy.log('memasukan jumlah');
+        Banking.enteramount('5000');
+        Banking.submitdeposit();
+        //assertion
+        cy.log('muncul assertion');
+        cy.contains('span', 'Deposit Successful').should('be.visible');
+        
+        //masuk menu withdrawl
+        Banking.withdrawl();
+        cy.contains('Amount to be Withdrawn :').should('be.visible');
+        cy.log('memasukan jumlah');
+        Banking.enterwithdrawl('7000');
+        Banking.submitwithdrawl();
+        //assertion
+        cy.contains('Transaction Failed. You can not withdraw amount more than the balance.').should('be.visible');
+    });
+
     it('Harus berhasil melakukan withdrawl di rekening Dollar', () => {
         cy.log('Memilih user')
         Banking.selectuser('Harry Potter');
