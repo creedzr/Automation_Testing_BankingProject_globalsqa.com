@@ -151,6 +151,11 @@ class BankingPage {
         cy.get('.btn.btn-default').should('be.visible').click();
     }
 
+    // fungsi untu masuk menu transaktion
+    transaction(){
+        cy.get('button[ng-click="transactions()"').should('be.visible').click();
+    }
+
     //fungsi tombol untuk logout user
     Logout(){
         cy.get('button[ng-click="byebye()"]').should('be.visible').click();
