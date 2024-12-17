@@ -156,6 +156,46 @@ class BankingPage {
         cy.get('button[ng-click="transactions()"').should('be.visible').click();
     }
 
+    //fungsi untuk mulai tanggal
+    startdate(start){
+        cy.get('#start').clear().type(start).should('have.value', start);
+    }
+
+    //fungsi untuk akhir tanggal
+    enddate(end){
+        cy.get('#end').clear().type(end).should('have.value', end);
+
+    }
+
+    //fungsi untuk gulir ke kanan
+    scrollright(times = 1){
+        for (let i = 0; i < times; i++) {
+        cy.get('button[ng-click="scrollRight()"').should('be.visible').click();
+        }
+    }
+
+    //fungsi gulir ke kiri
+    scrollleft(times = 1){
+        for (let i = 0; i < times; i++) {
+        cy.get('button[ng-click="scrollLeft()"').should('be.visible').click();
+        }
+    }
+
+    //fungsi gulir ke atas
+    scrollTop(){
+        cy.get('button[ng-click="scrollTop()"').should('be.visible').click(); 
+    }
+
+    //fungsi sort
+    sort(){
+        cy.get('a[ng-click="sortType = \'date\'; sortReverse = !sortReverse"]').should('be.visible').click({ force: true });
+    }
+
+    //fungsi reset
+    reset(){
+        cy.get('button[ng-click="reset()"').should('be.visible').click();
+    }
+
     //fungsi tombol untuk logout user
     Logout(){
         cy.get('button[ng-click="byebye()"]').should('be.visible').click();
