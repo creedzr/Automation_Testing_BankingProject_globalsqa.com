@@ -100,7 +100,7 @@ describe('Validasi Fitur Menambah Rekening', () => {
         cy.log('Menambah akun Dollar kedua');
         Banking.selectCustomer('Hermoine Granger', 'Dollar')
         Banking.clickProcess();
-        Banking.verifyAlertText('Bankingount created successfully');
+        Banking.verifyAlertText('Account created successfully');
 
         //validasi rekening dollar tertambahkan
         cy.log('mengecek akun dollar tertambahkan')
@@ -116,7 +116,7 @@ describe('Validasi Fitur Menambah Rekening', () => {
         cy.log('Menambah akun Dollar kedua');
         Banking.selectCustomer('Hermoine Granger', 'Dollar')
         Banking.clickProcess();
-        Banking.verifyAlertText('Bankingount created successfully');
+        Banking.verifyAlertText('Account created successfully');
 
 
         //validasi rekening dollar tertambahkan
@@ -131,7 +131,7 @@ describe('Validasi Fitur Menambah Rekening', () => {
         cy.log('Menambah akun Dollar ketiga');
         Banking.selectCustomer('Hermoine Granger', 'Dollar')
         Banking.clickProcess();
-        Banking.verifyAlertText('Bankingount created successfully');
+        Banking.verifyAlertText('Account created successfully');
 
          //validasi rekening dollar tertambahkan
         cy.log('mengecek akun dollar tertambahkan')
@@ -147,7 +147,7 @@ describe('Validasi Fitur Menambah Rekening', () => {
         cy.log('Menambah akun Pound kedua');
         Banking.selectCustomer('Ron Weasly', 'Pound')
         Banking.clickProcess();
-        Banking.verifyAlertText('Bankingount created successfully');
+        Banking.verifyAlertText('Account created successfully');
 
         //validasi rekening pound tertambahkan
         cy.log('mengecek akun Pound tertambahkan')
@@ -163,7 +163,7 @@ describe('Validasi Fitur Menambah Rekening', () => {
         cy.log('Menambah akun Pound kedua');
         Banking.selectCustomer('Ron Weasly', 'Pound')
         Banking.clickProcess();
-        Banking.verifyAlertText('Bankingount created successfully');
+        Banking.verifyAlertText('Account created successfully');
 
 
         //validasi rekening Pound tertambahkan
@@ -178,7 +178,7 @@ describe('Validasi Fitur Menambah Rekening', () => {
         cy.log('Menambah akun Pound ketiga');
         Banking.selectCustomer('Ron Weasly', 'Dollar')
         Banking.clickProcess();
-        Banking.verifyAlertText('Bankingount created successfully');
+        Banking.verifyAlertText('Account created successfully');
 
          //validasi rekening Pound tertambahkan
         cy.log('mengecek akun Pound tertambahkan')
@@ -194,7 +194,7 @@ describe('Validasi Fitur Menambah Rekening', () => {
         cy.log('Menambah akun Rupee kedua');
         Banking.selectCustomer('Harry Potter', 'Rupee')
         Banking.clickProcess();
-        Banking.verifyAlertText('Bankingount created successfully');
+        Banking.verifyAlertText('Account created successfully');
 
         //validasi rekening Rupee tertambahkan
         cy.log('mengecek akun Rupee tertambahkan')
@@ -209,7 +209,7 @@ describe('Validasi Fitur Menambah Rekening', () => {
          cy.log('Menambah akun Rupee kedua');
          Banking.selectCustomer('Harry Potter', 'Rupee')
          Banking.clickProcess();
-         Banking.verifyAlertText('Bankingount created successfully');
+         Banking.verifyAlertText('Account created successfully');
  
  
         //validasi rekening Rupee tertambahkan
@@ -224,7 +224,7 @@ describe('Validasi Fitur Menambah Rekening', () => {
          cy.log('Menambah akun Ruppe ketiga');
          Banking.selectCustomer('Harry Potter', 'Rupee')
          Banking.clickProcess();
-         Banking.verifyAlertText('Bankingount created successfully');
+         Banking.verifyAlertText('Account created successfully');
  
           //validasi rekening Rupee tertambahkan
          cy.log('mengecek akun Rupee tertambahkan')

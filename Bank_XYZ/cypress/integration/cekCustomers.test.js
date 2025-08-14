@@ -54,7 +54,7 @@ describe('Validasi fitur Customers', () => {
 
          //validasi penggunaan sort ke dua
          cy.log('validasi penggunaan sort ke dua')
-         Banking.sortFname();
+         Banking.sortLname();
          cy.get('table').contains('td', 'ruswandi').should('exist');
     });
 

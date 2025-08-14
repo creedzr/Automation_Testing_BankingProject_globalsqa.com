@@ -1,0 +1,199 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-14T09:11:05.920Z",
+    "end": "2025-08-14T09:11:26.778Z",
+    "duration": 20858,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ead6dc26-23b6-4aa6-a07a-7b452a2096b6",
+      "title": "",
+      "fullFile": "cypress\\integration\\cekCustomers.test.js",
+      "file": "cypress\\integration\\cekCustomers.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9ce39fa8-3d60-4c40-b24b-7e2e5de60f7e",
+          "title": "Validasi fitur Customers",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Harus berhasil mencari customer dengan fungsi search",
+              "fullTitle": "Validasi fitur Customers Harus berhasil mencari customer dengan fungsi search",
+              "timedOut": null,
+              "duration": 3464,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Banking.navigateToCustomer();\nBanking.searchCustomer('Harry');\ncy.get('table').contains('Harry').should('exist');",
+              "err": {},
+              "uuid": "f9ee3c62-6177-4263-97b2-6ce9fab8f3b3",
+              "parentUUID": "9ce39fa8-3d60-4c40-b24b-7e2e5de60f7e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Harus berhasil melakukan sort kolom First Name",
+              "fullTitle": "Validasi fitur Customers Harus berhasil melakukan sort kolom First Name",
+              "timedOut": null,
+              "duration": 3158,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//menambah customers\ncy.log('Menambah Customer');\nBanking.clickAddCustomer();\nBanking.fillCustomerDetails('agum', 'ruswandi', 'E12456');\nBanking.submitCustomerForm();\nBanking.verifyAlertText('Customer added successfully');\n//validasi penggunaan sort\nBanking.navigateToCustomer();\ncy.log('validasi penggunaan sort pertama');\nBanking.sortFname();\ncy.get('table').contains('td', 'Ron').should('exist');\n//validasi penggunaan sort ke dua\ncy.log('validasi penggunaan sort ke dua');\nBanking.sortFname();\ncy.get('table').contains('td', 'agum').should('exist');",
+              "err": {},
+              "uuid": "95057370-4840-45cc-a9a2-61501f1890d6",
+              "parentUUID": "9ce39fa8-3d60-4c40-b24b-7e2e5de60f7e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Harus berhasil melakukan sort kolom Last Name",
+              "fullTitle": "Validasi fitur Customers Harus berhasil melakukan sort kolom Last Name",
+              "timedOut": null,
+              "duration": 2804,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//menambah customers\ncy.log('Menambah Customer');\nBanking.clickAddCustomer();\nBanking.fillCustomerDetails('agum', 'ruswandi', 'E12456');\nBanking.submitCustomerForm();\nBanking.verifyAlertText('Customer added successfully');\n//validasi penggunaan sort\nBanking.navigateToCustomer();\ncy.log('validasi penggunaan sort pertama');\nBanking.sortLname();\ncy.get('table').contains('td', 'Weasly').should('exist');\n//validasi penggunaan sort ke dua\ncy.log('validasi penggunaan sort ke dua');\nBanking.sortLname();\ncy.get('table').contains('td', 'ruswandi').should('exist');",
+              "err": {},
+              "uuid": "10e879e9-14cd-436d-8b82-97e508adc527",
+              "parentUUID": "9ce39fa8-3d60-4c40-b24b-7e2e5de60f7e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Harus berhasil melakukan sort kolom Postcode",
+              "fullTitle": "Validasi fitur Customers Harus berhasil melakukan sort kolom Postcode",
+              "timedOut": null,
+              "duration": 3227,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//menambah customers\ncy.log('Menambah Customer');\nBanking.clickAddCustomer();\nBanking.fillCustomerDetails('agum', 'ruswandi', 'E12456');\nBanking.submitCustomerForm();\nBanking.verifyAlertText('Customer added successfully');\n//validasi penggunaan sort\nBanking.navigateToCustomer();\ncy.log('validasi penggunaan sort pertama');\nBanking.sortPostcd();\ncy.get('table').contains('td', 'E89898').should('exist');\n//validasi penggunaan sort ke dua\ncy.log('validasi penggunaan sort ke dua');\nBanking.sortPostcd();\ncy.get('table').contains('td', 'E12456').should('exist');",
+              "err": {},
+              "uuid": "4d1d6de5-9f3f-4403-b218-e945d7b26058",
+              "parentUUID": "9ce39fa8-3d60-4c40-b24b-7e2e5de60f7e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Harus berhasil menghapus customer",
+              "fullTitle": "Validasi fitur Customers Harus berhasil menghapus customer",
+              "timedOut": null,
+              "duration": 3236,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//menambah customers\ncy.log('Menambah Customer');\nBanking.clickAddCustomer();\nBanking.fillCustomerDetails('agum', 'ruswandi', 'E12456');\nBanking.submitCustomerForm();\nBanking.verifyAlertText('Customer added successfully');\n//mencari customer yg akan di delete\nBanking.navigateToCustomer();\nBanking.searchCustomer('agum');\n//validasi nama customer ada di tabel\ncy.log('validasi nama customer ada di tabel');\ncy.get('table').contains('agum').should('exist');\n//menghapus customer\ncy.log('menghapus customer');\nBanking.deleteCustomer();\n//validasi nama customer tidak ada di tabel\ncy.log('validasi nama customer tidak ada di tabel');\ncy.get('table').contains('agum').should('not.exist');",
+              "err": {},
+              "uuid": "a2e9a3b5-b19a-4dce-8ac7-285f0b20515d",
+              "parentUUID": "9ce39fa8-3d60-4c40-b24b-7e2e5de60f7e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Harus berhasil memvalidasi tombol navigasi Home di halaman Customers",
+              "fullTitle": "Validasi fitur Customers Harus berhasil memvalidasi tombol navigasi Home di halaman Customers",
+              "timedOut": null,
+              "duration": 1549,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Banking.navigateToOpenaccount();\nBanking.navigateTohome();\n//assertion\ncy.get('button[ng-click=\"home()\"]').should('be.visible');\ncy.get('button[ng-click=\"customer()\"]').should('be.visible');\ncy.get('button[ng-click=\"manager()\"]').should('be.visible');",
+              "err": {},
+              "uuid": "0cd46c7b-7357-408f-be35-5e02a4c12796",
+              "parentUUID": "9ce39fa8-3d60-4c40-b24b-7e2e5de60f7e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f9ee3c62-6177-4263-97b2-6ce9fab8f3b3",
+            "95057370-4840-45cc-a9a2-61501f1890d6",
+            "10e879e9-14cd-436d-8b82-97e508adc527",
+            "4d1d6de5-9f3f-4403-b218-e945d7b26058",
+            "a2e9a3b5-b19a-4dce-8ac7-285f0b20515d",
+            "0cd46c7b-7357-408f-be35-5e02a4c12796"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17438,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false
+      },
+      "version": "6.2.0"
+    }
+  }
+}
